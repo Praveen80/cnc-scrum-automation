@@ -3,8 +3,9 @@
   "description": "",
   "version": "1.0.0",
   "scripts": {
-    "webdriver-install": "node_modules/.bin/selenium-standalone install --version=3.0.1 --drivers.chrome.version=2.30 --drivers.chrome.arch=x64",
-    "webdriver-start": "node_modules/.bin/selenium-standalone start --version=3.0.1 --drivers.chrome.version=2.30 --drivers.chrome.arch=x64"
+    "test-ci": "node_modules/.bin/wdio wdio.conf.chrome.js --suites smoke",
+    "webdriver-install": "node_modules/.bin/selenium-standalone install --version=3.0.1 --drivers.chrome.version=2.32 --drivers.chrome.arch=x64",
+    "webdriver-start": "node_modules/.bin/selenium-standalone start --version=3.0.1 --drivers.chrome.version=2.32 --drivers.chrome.arch=x64"
   },
   "dependencies": {
     "chai": "^3.5.0",
