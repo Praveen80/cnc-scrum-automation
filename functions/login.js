@@ -12,7 +12,7 @@ let LoginPage = {
   /**
    * Define Elements
    **/
-  username: { get: function () { return browser.element('//input[@name="email"]'); } },
+  email: { get: function () { return browser.element('//input[@name="email"]'); } },
   password: { get: function () { return browser.element('//input[@name="password"]'); } },
   loginButton: { get: function () { return browser.element('//button[contains(@class,"primary")]'); } },
 
@@ -21,8 +21,8 @@ let LoginPage = {
    */
   open: {
     value: function () {
-      browser.url('localhost:8080/login');
-    }
+      browser.url('http://localhost:8080');
+    },
   },
 
    /**
@@ -30,14 +30,13 @@ let LoginPage = {
    */
   login: {
     value: function (user) {
+      browser.waitForLoading();
       this.email.waitForEnabled();
       this.email.setValue(user.email);
-      browser.pause(1000);
       this.password.setValue(user.password);
-      browser.pause(1000);
-      this.login.Button.waitForEnabled();
+      this.loginButton.waitForEnabled();
       this.loginButton.click();
-      browser.pause(1000);
+      browser.pause(2000);
     }
   },
 
@@ -46,7 +45,7 @@ let LoginPage = {
    */
   validateHomePageUrl: {
     value: function() {
-      browser.urlValidation('/scrum') ;
+      expect(browser.getUrl()).to.include('/scrum');
       }
   }
 };

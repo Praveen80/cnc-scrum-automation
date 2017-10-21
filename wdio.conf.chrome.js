@@ -6,7 +6,7 @@
  *
  */
 let merge = require('deepmerge');
-let wdioConfBase = require('./wdio.conf.js');
+let wdioConfBase = require('./wdio.conf.base.js');
 
 exports.config = merge(wdioConfBase.config, {
 

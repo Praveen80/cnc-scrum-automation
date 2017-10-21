@@ -6,7 +6,7 @@ module.exports = function () {
     loginPage.open();
   });
 
-  this.Then(/^User is redirected to the home pagee$/, () => {
+  this.Then(/^User is redirected to the home page$/, () => {
     loginPage.validateHomePageUrl();
   });
 
